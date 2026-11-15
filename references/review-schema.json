@@ -1,0 +1,558 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Contribution review v0.9.9 — readable issue-centered Markdown with source index",
+  "type": "object",
+  "required": [
+    "response_type",
+    "rubric_version"
+  ],
+  "properties": {
+    "case_id": {
+      "type": "string"
+    },
+    "variant": {
+      "const": "unified"
+    },
+    "rubric_version": {
+      "const": "0.9.9"
+    },
+    "input_mode": {
+      "enum": [
+        "single",
+        "compare"
+      ]
+    },
+    "verification_status": {
+      "enum": [
+        "out_of_scope",
+        "explicitly_requested"
+      ]
+    },
+    "idea": {
+      "type": "string",
+      "minLength": 1
+    },
+    "claims": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "locator",
+          "claim",
+          "positioning",
+          "strength_and_scope",
+          "status"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "locator": {
+            "type": "string",
+            "minLength": 1
+          },
+          "claim": {
+            "type": "string",
+            "minLength": 1
+          },
+          "positioning": {
+            "type": "string",
+            "description": "Actual novelty and role in the author's argument; independent explanation or method does not become framing merely because another method survives."
+          },
+          "strength_and_scope": {
+            "type": "string",
+            "description": "The claim's stated epistemic strength and necessary conditions; not just the method/topic name."
+          },
+          "status": {
+            "enum": [
+              "established_as_stated",
+              "unestablished_part",
+              "missing_bridge",
+              "contradicted_by_text",
+              "restates_baseline",
+              "insufficient_context"
+            ],
+            "description": "Judgement at the claim's actual strength. A properly scoped research hypothesis may be established_as_stated without certifying its truth."
+          }
+        }
+      },
+      "description": "Actual identifiable claims; empty when none can be extracted. Explain why in overall_rationale rather than inventing a claim."
+    },
+    "overall_rationale": {
+      "type": "string",
+      "minLength": 1
+    },
+    "top_issues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "locator",
+          "issue",
+          "affected_claim",
+          "impact_level",
+          "impact_rationale",
+          "minimum_fix"
+        ],
+        "properties": {
+          "locator": {
+            "type": "string",
+            "minLength": 1
+          },
+          "issue": {
+            "type": "string",
+            "minLength": 1
+          },
+          "affected_claim": {
+            "type": "string",
+            "minLength": 1
+          },
+          "impact_level": {
+            "enum": [
+              "core",
+              "bounded",
+              "local"
+            ]
+          },
+          "impact_rationale": {
+            "type": "string",
+            "description": "Compare what remains and what is lost for this specific contribution after the minimal legitimate change; surviving names or another contribution are insufficient."
+          },
+          "minimum_fix": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "strengths": {
+      "type": "array",
+      "items": {
+        "type": [
+          "object",
+          "string"
+        ]
+      }
+    },
+    "context_limits": {
+      "type": [
+        "string",
+        "array"
+      ]
+    },
+    "overall_score": {
+      "enum": [
+        1,
+        1.5,
+        2,
+        2.5,
+        3,
+        3.5,
+        4,
+        4.5,
+        5,
+        null
+      ],
+      "description": "Only when requested: ARR-style contribution-only adaptation, not official overall recommendation or a conversion from historical1–10 scores."
+    },
+    "comparison_notes": {
+      "type": [
+        "string",
+        "array",
+        "object"
+      ]
+    },
+    "response_type": {
+      "enum": [
+        "full_review",
+        "focused"
+      ]
+    },
+    "focus": {
+      "type": "string",
+      "minLength": 1
+    },
+    "judgement": {
+      "type": "string",
+      "minLength": 1
+    },
+    "rationale": {
+      "type": "string",
+      "minLength": 1
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": [
+          "string",
+          "object"
+        ]
+      }
+    },
+    "score_scale": {
+      "const": "arr_contribution_1_5_half_step_v2025_02"
+    },
+    "score_scope": {
+      "const": "contribution_text_only"
+    },
+    "adjacent_grade_reason": {
+      "type": "string"
+    },
+    "diagnostics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "aspect",
+          "judgement"
+        ],
+        "properties": {
+          "aspect": {
+            "type": "string"
+          },
+          "judgement": {
+            "type": "string"
+          }
+        }
+      },
+      "description": "Optional verbal diagnostics; not extra official ARR numerical dimensions."
+    },
+    "online_status": {
+      "enum": [
+        "primary_sources_opened",
+        "documented_cache_used",
+        "user_requested_offline",
+        "unavailable",
+        "not_needed_for_focused_question"
+      ]
+    },
+    "exemplars": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "paper_title",
+          "paper_url",
+          "locator",
+          "rhetorical_move",
+          "relation_to_current_text",
+          "transferable_action",
+          "verified_on",
+          "evidence_status"
+        ],
+        "properties": {
+          "paper_title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "paper_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "locator": {
+            "type": "string",
+            "minLength": 1
+          },
+          "rhetorical_move": {
+            "type": "string",
+            "minLength": 1
+          },
+          "relation_to_current_text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "transferable_action": {
+            "type": "string",
+            "minLength": 1
+          },
+          "verified_on": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date"
+          },
+          "evidence_status": {
+            "enum": [
+              "paper_only",
+              "paper_and_public_ratings",
+              "paper_and_cached_public_ratings",
+              "paper_and_venue_or_award"
+            ]
+          },
+          "rating_evidence": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "required": [
+              "score_field",
+              "raw_values",
+              "source_urls",
+              "as_of",
+              "stage",
+              "reviewed_revision_alignment"
+            ],
+            "properties": {
+              "score_field": {
+                "type": "string"
+              },
+              "raw_values": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "number"
+                }
+              },
+              "source_urls": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              },
+              "as_of": {
+                "type": "string",
+                "format": "date"
+              },
+              "stage": {
+                "type": "string"
+              },
+              "reviewed_revision_alignment": {
+                "type": "string"
+              }
+            }
+          },
+          "venue_award_evidence": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "required": [
+              "source_url",
+              "description",
+              "verified_on"
+            ],
+            "properties": {
+              "source_url": {
+                "type": "string",
+                "format": "uri"
+              },
+              "description": {
+                "type": "string"
+              },
+              "verified_on": {
+                "type": "string",
+                "format": "date"
+              }
+            }
+          },
+          "venue_track": {
+            "enum": [
+              "main_conference",
+              "findings",
+              "workshop",
+              "other_accepted",
+              "unverified",
+              null
+            ]
+          },
+          "affiliation_evidence": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "required": [
+              "affiliations",
+              "source_url",
+              "locator",
+              "verified_on"
+            ],
+            "properties": {
+              "affiliations": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "source_url": {
+                "type": "string",
+                "format": "uri"
+              },
+              "locator": {
+                "type": "string",
+                "minLength": 1
+              },
+              "verified_on": {
+                "type": "string",
+                "format": "date"
+              },
+              "collaboration_note": {
+                "type": "string"
+              }
+            }
+          },
+          "publication_year": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1900,
+            "description": "Official publication/venue year; not the latest preprint revision or source retrieval year."
+          },
+          "publication_status": {
+            "enum": [
+              "published",
+              "accepted_forthcoming",
+              "preprint",
+              "unverified",
+              null
+            ]
+          },
+          "recency_note": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Why this date/version is used; when an older exemplar is selected, its specific comparative value."
+          },
+          "sample_id": {
+            "type": "string",
+            "pattern": "^S[1-9][0-9]*$",
+            "description": "Stable ID used by the Markdown sample index and related review items."
+          }
+        }
+      }
+    },
+    "reference_time_context": {
+      "type": "object",
+      "required": [
+        "as_of",
+        "preferred_publication_years"
+      ],
+      "properties": {
+        "as_of": {
+          "type": "string",
+          "format": "date"
+        },
+        "preferred_publication_years": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "integer",
+            "minimum": 1900
+          }
+        },
+        "selection_rationale": {
+          "type": "string"
+        }
+      }
+    },
+    "review_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "kind",
+          "title",
+          "locator",
+          "original_excerpt",
+          "judgement",
+          "sample_ids",
+          "action"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "required_fix",
+              "optional_improvement",
+              "strength_to_keep"
+            ]
+          },
+          "title": {
+            "type": "string"
+          },
+          "locator": {
+            "type": "string"
+          },
+          "original_excerpt": {
+            "type": "string"
+          },
+          "judgement": {
+            "type": "string"
+          },
+          "sample_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "action": {
+            "type": "string"
+          }
+        }
+      },
+      "description": "Optional presentation record; required issues still appear in top_issues. Do not invent issues to fill this array."
+    }
+  },
+  "description": "Use full_review for a complete requested review, focused for a local question. Numerical fields remain optional and only appear when scoring is requested. User-specified exact formats take priority.",
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "response_type": {
+            "const": "full_review"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "idea",
+          "claims",
+          "overall_rationale",
+          "top_issues"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "response_type": {
+            "const": "focused"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "focus",
+          "judgement",
+          "rationale"
+        ]
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "overall_score"
+        ]
+      },
+      "then": {
+        "required": [
+          "score_scale",
+          "score_scope"
+        ]
+      }
+    }
+  ]
+}

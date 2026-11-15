@@ -1,0 +1,127 @@
+{
+  "verified_date": "2026-11-15",
+  "purpose": "citation provenance, not scoring gold or target scores",
+  "entries": [
+    {
+      "id": "sharpening",
+      "title": "Self-Improvement in Language Models: The Sharpening Mechanism",
+      "venue": "ICLR 2025",
+      "paper_url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/bee8c2bc757f6bbc3efd7cf1b979f0c9-Paper-Conference.pdf",
+      "location": "Abstract; section 1.2, pp. 3–4, especially statistical-framework and algorithm-analysis paragraphs",
+      "paper_verified_on": "2026-11-15",
+      "paper_sha256": "3895babf827df0bd99142458213704bb24980d5fa25992d76254daecd257c718",
+      "reviewed_revision_alignment": "not established",
+      "rating_evidence": {
+        "score_field": "rating",
+        "raw_values": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "source_urls": [
+          "https://openreview.net/forum?id=WJaUkwci9o&noteId=wFDqIRY0JU",
+          "https://openreview.net/forum?id=WJaUkwci9o&noteId=oy7uHgdzV8",
+          "https://openreview.net/forum?id=WJaUkwci9o&noteId=BxxXvCQOQD",
+          "https://openreview.net/forum?id=WJaUkwci9o&noteId=4JZnnJ1Gr1"
+        ],
+        "as_of": "2026-11-13",
+        "stage": "current_public_note_at_cache_time",
+        "source_cache_sha256": "0374900dcf13435639eca18b0435595010df3f358c4668601ed7a7c9db08ecb8",
+        "initial_values_verified": false,
+        "reviewed_revision_alignment": "not established"
+      },
+      "venue_award_evidence": {
+        "source_url": "https://openreview.net/forum?id=WJaUkwci9o&noteId=AA7MKe6O5J",
+        "description": "Accept (Oral)",
+        "as_of": "2026-11-13"
+      }
+    },
+    {
+      "id": "test_task",
+      "title": "Training on the Test Task Confounds Evaluation and Emergence",
+      "venue": "ICLR 2025",
+      "paper_url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/ab8c971c2ccd12bac0ab249f75e2c16d-Paper-Conference.pdf",
+      "location": "Abstract; section 1.1, pp. 1–3, especially the controlled-adjustment paragraph on p. 2",
+      "paper_verified_on": "2026-11-15",
+      "paper_sha256": "a487551792c1107e85c1693eab4b593ce8cee7f8af7bd0346113bbbc6691d82b",
+      "reviewed_revision_alignment": "not established",
+      "rating_evidence": {
+        "score_field": "rating",
+        "raw_values": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "source_urls": [
+          "https://openreview.net/forum?id=jOmk0uS1hl&noteId=tcafCpvnbl",
+          "https://openreview.net/forum?id=jOmk0uS1hl&noteId=casvXAIbEx",
+          "https://openreview.net/forum?id=jOmk0uS1hl&noteId=X6ogTlvlAF",
+          "https://openreview.net/forum?id=jOmk0uS1hl&noteId=CzrGnMmiPZ"
+        ],
+        "as_of": "2026-11-13",
+        "stage": "current_public_note_at_cache_time",
+        "source_cache_sha256": "b6d3435a8088e7b3f2abd8ccbb1a3856b50cce6a2acd7483a9c0f2622410185b",
+        "initial_values_verified": false,
+        "reviewed_revision_alignment": "not established"
+      },
+      "venue_award_evidence": {
+        "source_url": "https://openreview.net/forum?id=jOmk0uS1hl&noteId=3yNwjidfRN",
+        "description": "Accept (Oral)",
+        "as_of": "2026-11-13"
+      }
+    },
+    {
+      "id": "bigcodebench",
+      "title": "BigCodeBench: Benchmarking Code Generation with Diverse Function Calls and Complex Instructions",
+      "venue": "ICLR 2025",
+      "paper_url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/a6a90bcc2aa470c3871b2d39a67d26e8-Paper-Conference.pdf",
+      "location": "Abstract p. 1; section 1, pp. 2–3, last two paragraphs on p. 3",
+      "paper_verified_on": "2026-11-15",
+      "paper_sha256": "69cd4ca86d61b923c3b23767b2dd01855096a054fdfb2854868f0570ff4692e2",
+      "reviewed_revision_alignment": "not established",
+      "rating_evidence": {
+        "score_field": "rating",
+        "raw_values": [
+          10,
+          8,
+          8,
+          10
+        ],
+        "source_urls": [
+          "https://openreview.net/forum?id=YrycTjllL0&noteId=xdutvK24rW",
+          "https://openreview.net/forum?id=YrycTjllL0&noteId=cSH8p3nF1C",
+          "https://openreview.net/forum?id=YrycTjllL0&noteId=QANgj6yVaG",
+          "https://openreview.net/forum?id=YrycTjllL0&noteId=6zAXjEhypk"
+        ],
+        "as_of": "2026-11-13",
+        "stage": "current_public_note_at_cache_time",
+        "source_cache_sha256": "bce04bbd598df099b63703661dafc71325266d260600d4eec1558008fd4b632b",
+        "initial_values_verified": false,
+        "reviewed_revision_alignment": "not established"
+      },
+      "venue_award_evidence": {
+        "source_url": "https://openreview.net/forum?id=YrycTjllL0&noteId=KuCDDwRovP",
+        "description": "Accept (Oral)",
+        "as_of": "2026-11-13"
+      }
+    },
+    {
+      "id": "caa",
+      "title": "Steering Llama 2 via Contrastive Activation Addition",
+      "venue": "ACL 2024, main conference, Volume 1: Long Papers",
+      "paper_url": "https://aclanthology.org/2024.acl-long.828.pdf",
+      "location": "Abstract p. 15504; section 1 p. 15505; section 2 pp. 15505–15506, comparisons to Turner et al. and Li et al.",
+      "paper_verified_on": "2026-11-15",
+      "paper_sha256": "3ace1fb9aaa326318c2e452cc1109557a9847ad57edac6aa18ad457711bcee16",
+      "reviewed_revision_alignment": "not established",
+      "rating_evidence": null,
+      "venue_award_evidence": {
+        "source_url": "https://2024.aclweb.org/program/best_papers/",
+        "description": "Outstanding Paper; SAC Award, Ethics, Bias, and Fairness",
+        "verified_on": "2026-11-15"
+      }
+    }
+  ]
+}

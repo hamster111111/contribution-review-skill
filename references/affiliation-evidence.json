@@ -1,0 +1,170 @@
+{
+  "verification_date": "2026-11-15",
+  "scope": "用官方会议 proceedings / 已发表 PDF 核验具体范例的录用与署名；机构不是写作质量的因果证据，也不替代 contribution 内容评价。",
+  "selection_policy": "三个具体案例，不做机构排名；优先正式主会；联合论文明确联合署名。",
+  "papers": [
+    {
+      "id": "lightman2024verify",
+      "title": "Let's Verify Step by Step",
+      "venue": "International Conference on Learning Representations",
+      "venue_short": "ICLR",
+      "year": 2024,
+      "track": "Conference（正式主会论文集；非 Findings / workshop；未核验 Oral/Poster 等展示类别）",
+      "verification_date": "2026-11-15",
+      "published_pdf_page": 1,
+      "affiliations_as_published": [
+        "OpenAI"
+      ],
+      "authors_as_published": [
+        "Hunter Lightman",
+        "Vineet Kosaraju",
+        "Yura Burda",
+        "Harri Edwards",
+        "Bowen Baker",
+        "Teddy Lee",
+        "Jan Leike",
+        "John Schulman",
+        "Ilya Sutskever",
+        "Karl Cobbe"
+      ],
+      "affiliation_mapping": [
+        {
+          "affiliation": "OpenAI",
+          "authors": "all"
+        }
+      ],
+      "joint_work_wording": "可写“OpenAI 的 ICLR 2024 主会论文”；不必推测作者现任机构或更细研究组。",
+      "sources": [
+        {
+          "role": "venue_and_track",
+          "url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/aca97732e30bcf1303bc22ac3924fd16-Abstract-Conference.html",
+          "locator": "标题及作者栏下的 ICLR 2024 / Conference 标记"
+        },
+        {
+          "role": "published_author_affiliation",
+          "url": "https://proceedings.iclr.cc/paper_files/paper/2024/file/aca97732e30bcf1303bc22ac3924fd16-Paper-Conference.pdf",
+          "locator": "p.1 顶部 Published as a conference paper at ICLR 2024；作者块下 OpenAI"
+        }
+      ],
+      "notes": [
+        "正式 proceedings 网页用 Yuri Burda、Harrison Edwards；PDF 作者栏用 Yura Burda、Harri Edwards。本记录作者拼写以已发表 PDF 为准。"
+      ]
+    },
+    {
+      "id": "gunjal2026rar",
+      "title": "Rubrics as Rewards: Reinforcement Learning Beyond Verifiable Domains",
+      "venue": "International Conference on Learning Representations",
+      "venue_short": "ICLR",
+      "year": 2026,
+      "track": "Conference（正式主会论文集；非 Findings / workshop；未核验 Oral/Poster 等展示类别）",
+      "verification_date": "2026-11-15",
+      "published_pdf_page": 1,
+      "affiliations_as_published": [
+        "Scale AI"
+      ],
+      "authors_as_published": [
+        "Anisha Gunjal",
+        "Anthony Wang",
+        "Elaine Lau",
+        "Vaskar Nath",
+        "Yunzhong He",
+        "Bing Liu",
+        "Sean Hendryx"
+      ],
+      "affiliation_mapping": [
+        {
+          "affiliation": "Scale AI",
+          "authors": "all"
+        }
+      ],
+      "joint_work_wording": "可写“论文署名 Scale AI 的 ICLR 2026 主会工作”；部分作者另附“工作在 Scale AI 期间完成”的说明，不能推断其核验日仍受雇于 Scale AI。",
+      "sources": [
+        {
+          "role": "venue_and_track",
+          "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/cfd7bee7a651ee9af525098ef67a9e45-Abstract-Conference.html",
+          "locator": "标题及作者栏下的 ICLR 2026 / Conference 标记"
+        },
+        {
+          "role": "published_author_affiliation",
+          "url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/cfd7bee7a651ee9af525098ef67a9e45-Paper-Conference.pdf",
+          "locator": "p.1 作者块下 Scale AI；页底 Work conducted while at Scale AI."
+        }
+      ],
+      "notes": [
+        "不将已发表论文机构等同于作者当前雇主。"
+      ]
+    },
+    {
+      "id": "huang2025sharpening",
+      "title": "Self-Improvement in Language Models: The Sharpening Mechanism",
+      "venue": "International Conference on Learning Representations",
+      "venue_short": "ICLR",
+      "year": 2025,
+      "track": "Conference（正式主会论文集；非 Findings / workshop；未核验 Oral/Poster 等展示类别）",
+      "verification_date": "2026-11-15",
+      "published_pdf_page": 1,
+      "affiliations_as_published": [
+        "UIUC",
+        "Microsoft Research",
+        "MIT",
+        "CMU"
+      ],
+      "authors_as_published": [
+        "Audrey Huang",
+        "Adam Block",
+        "Dylan J. Foster",
+        "Dhruv Rohatgi",
+        "Cyril Zhang",
+        "Max Simchowitz",
+        "Jordan T. Ash",
+        "Akshay Krishnamurthy"
+      ],
+      "affiliation_mapping": [
+        {
+          "affiliation": "UIUC",
+          "authors": [
+            "Audrey Huang"
+          ]
+        },
+        {
+          "affiliation": "Microsoft Research",
+          "authors": [
+            "Adam Block",
+            "Dylan J. Foster",
+            "Cyril Zhang",
+            "Jordan T. Ash",
+            "Akshay Krishnamurthy"
+          ]
+        },
+        {
+          "affiliation": "MIT",
+          "authors": [
+            "Dhruv Rohatgi"
+          ]
+        },
+        {
+          "affiliation": "CMU",
+          "authors": [
+            "Max Simchowitz"
+          ]
+        }
+      ],
+      "joint_work_wording": "应写“Microsoft Research 与 UIUC、MIT、CMU 作者的 ICLR 2025 主会联合工作”；不得改写为微软独立工作，也不得凭学校署名推断更细实验室。",
+      "sources": [
+        {
+          "role": "venue_and_track",
+          "url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/bee8c2bc757f6bbc3efd7cf1b979f0c9-Abstract-Conference.html",
+          "locator": "标题及作者栏下的 ICLR 2025 / Conference 标记"
+        },
+        {
+          "role": "published_author_affiliation",
+          "url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/bee8c2bc757f6bbc3efd7cf1b979f0c9-Paper-Conference.pdf",
+          "locator": "p.1 作者块逐人署名：UIUC；Microsoft Research；MIT；CMU"
+        }
+      ],
+      "notes": [
+        "学校缩写按论文首页原样保留。该题目也有 NeurIPS 2024 workshop 版本；本记录仅指 ICLR 2025 正式 proceedings 版本。"
+      ]
+    }
+  ]
+}

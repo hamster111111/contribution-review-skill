@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI Contribution 评审"
+  default_prompt: "请用 $contribution-review 审阅AI论文贡献，按总览、逐项原文定位／问题／论文对照／改法及样本索引输出清楚的Markdown，按需给ARR式评分。"
+  short_description: "审阅AI论文贡献的表达定位与逻辑，联网引用近期顶会范例并提供ARR量尺适配评分"
