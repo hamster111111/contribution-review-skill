@@ -4,7 +4,7 @@
 
 English · [简体中文](README.zh-CN.md)
 
-[![Skill version 0.9.9](https://img.shields.io/badge/skill-0.9.9-0f766e?style=flat-square)](SKILL.md)
+[![Skill version 0.10.0](https://img.shields.io/badge/skill-0.10.0-0f766e?style=flat-square)](SKILL.md)
 [![Optional ARR-style scale 1–5](https://img.shields.io/badge/ARR--style-1%E2%80%935-475569?style=flat-square)](references/scoring.md)
 [![Markdown with optional JSON](https://img.shields.io/badge/output-Markdown%20%2B%20JSON-475569?style=flat-square)](references/output-format.md)
 
@@ -79,11 +79,14 @@ Codex discovers local skills in these locations automatically. If the skill does
 
 ![Review workflow: understand claims, assess connections and impact, find comparable papers, and give concrete edits](docs/assets/workflow.png)
 
-The default output is readable Markdown:
+The default output is readable Markdown with an ARR-shaped structure:
 
-1. **Overview** — the idea, overall judgement, and the concrete value worth keeping.
-2. **Focused review items** — original location and short quote → problem or strength → comparable paper passage → action.
-3. **Sample index** — stable `S1`, `S2` identifiers, source locations, and links.
+1. **Summary** — the idea and overall judgement.
+2. **Strengths** — specific value worth keeping.
+3. **Weaknesses** — necessary fixes, or an explicit statement that none were found.
+4. **Suggestions** — optional edits, with the original passage, comparable paper, and action kept together.
+5. **ARR dimensions** — separate argument support, interest/value, Overall, and confidence judgements.
+6. **Sample index** — stable `S1`, `S2` identifiers, source locations, and links.
 
 Usually the review develops the most important 1–2 items. If no required fix exists, it says so. Optional polish stays optional.
 
@@ -102,11 +105,20 @@ Full reviews normally open the original papers and use a small number of example
 
 Sources stay beside the advice they support. Acceptance, awards, and public review scores are background, not evidence that a sentence caused acceptance or that another manuscript deserves the same score. Search uses public topic keywords rather than full unpublished paragraphs. If browsing is unavailable or explicitly disabled, the review continues with that limitation stated. See [source-selection and citation rules](references/online-exemplars.md).
 
-## Optional ARR-style scoring
+## ARR-style rubric diagnostics and optional scores
 
-Only an explicit scoring request produces a number. The skill uses **1–5 in half-point steps** to assess the supplied contribution and necessary context, with a reason for the chosen grade and the nearest alternative.
+Full reviews distinguish four questions. Ordinary reviews provide verbal diagnostics; an explicit scoring or ARR-style request adds numbers. A request for one score or no numbers takes priority.
 
-This is a **local adaptation**, not an official ARR rubric or endorsement. ARR’s [official overall assessment](https://aclrollingreview.org/reviewform#overall-assessment) concerns the whole paper; this skill’s score concerns contribution writing. It does not predict acceptance or awards, verify the full study, average auxiliary dimensions, or convert historical 1–10 scores. The [scoring guide](references/scoring.md) defines the adaptation.
+| Dimension | What it assesses | Numerical scale when requested |
+| --- | --- | --- |
+| **Soundness adaptation** | Support for the contribution's argument and scope within the supplied material | 1–5, half steps |
+| **Excitement** | Specific reader interest and potential value | 1–5, half steps |
+| **Overall adaptation** | Contribution value and substantive limitations, judged independently | 1–5, half steps |
+| **Reviewer Confidence** | Confidence in this local assessment, not paper quality | 1–5, integers only |
+
+A well-supported but ordinary useful contribution can receive Soundness 4 and Overall 3. Overall is not the average of other dimensions. A grade above 3 needs a concrete positive value argument; no required fixes does not automatically mean 4. No target mean or high-score quota is imposed.
+
+This is a **contribution-level adaptation**, not official ARR whole-paper reviewing or endorsement. Unchecked experiments and reproducibility remain unassessed, not failed. The score targets a single-reviewer-style judgement, not a paper average, meta-review, acceptance prediction, or conversion of historical 1–10 scores. Matching rubric structure does not establish calibration to human ARR score distributions. See the [dimension guide](references/arr-dimensions.md) and [Overall anchors](references/scoring.md), alongside the [official ARR form](https://aclrollingreview.org/reviewform).
 
 ## Repository map
 
@@ -117,7 +129,8 @@ contribution-review-skill/
 ├── references/
 │   ├── output-format.md             # Readable review structure
 │   ├── online-exemplars.md          # Retrieval and citation rules
-│   ├── scoring.md                   # Optional ARR-style adaptation
+│   ├── arr-dimensions.md            # Independent contribution-level rubrics
+│   ├── scoring.md                   # Optional Overall adaptation
 │   ├── review-schema.json           # Optional structured output
 │   ├── exemplar-catalog.md          # Starting points, not score anchors
 │   ├── exemplar-evidence.json       # Public-source provenance

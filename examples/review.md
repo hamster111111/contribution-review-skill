@@ -13,13 +13,19 @@ The hypothetical author supplies only this contribution paragraph. It describes 
 
 **Requested task:** Review the contribution writing, use a relevant published example, and suggest a minimal fix. Do not score or rewrite the entire paragraph.
 
-## Overview
+## Summary
 
 The idea is an evaluation resource that makes task evidence requirements explicit. Keep the clear connection between passage labels and grouping questions by evidence location. The final sentence introduces a different capability: identifying evidence actually used by a model. The supplied text does not connect the task annotations to that model-use claim.
 
 One required fix follows. This is a scope problem in the claim, not a judgement that the proposed resource cannot be useful or that unfinished experiments are a writing defect.
 
-## Required fix: bound what the passage labels establish
+## Strengths
+
+The passage labels have a concrete, bounded purpose: grouping questions by the evidence the task requires. That resource design and its stated analysis use are worth preserving.
+
+## Weaknesses
+
+### Required fix: bound what the passage labels establish
 
 **Original location — [C1, final sentence](#c1):**
 
@@ -32,6 +38,21 @@ One required fix follows. This is a scope problem in the claim, not a judgement 
 The transferable writing move is to connect the resource’s design to the specific evaluation it makes possible. Applied to C1, describe what the passage labels let a reader group or inspect. This comparison supplies a writing example; it does not establish EvidenceMap’s model-use claim.
 
 **Suggested action.** Retain the label definition and grouping purpose. Remove or narrow the final sentence to that established purpose. If the intended contribution really is identifying model evidence use, explain the existing basis for that stronger ability when available; do not invent a mechanism or result to fill the gap. A full replacement paragraph is unnecessary for the requested review.
+
+## Suggestions
+
+Prioritize the necessary claim narrowing above. No additional optional polish or full rewrite is needed for this request.
+
+## ARR-style contribution diagnostics
+
+No numbers are supplied because the request explicitly excludes scoring. These are local contribution diagnostics; full-study evidence and reproducibility remain unassessed.
+
+| Dimension | Judgement and basis |
+| --- | --- |
+| Soundness adaptation | The label-to-grouping relationship is clear; the separate model-evidence-use capability is not connected to those labels. |
+| Excitement | Task-evidence grouping has an identifiable use. The stronger behavioral insight remains unestablished in the supplied paragraph. |
+| Overall adaptation | Preserve the useful resource idea, but narrow the substantive additional capability claim. |
+| Reviewer Confidence | The local distinction is clear from the text; this does not establish whether a stronger, unstated mechanism exists elsewhere. |
 
 ## Sample index
 

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Contribution review v0.9.9 — readable issue-centered Markdown with source index",
+  "title": "Contribution review v0.10.0 — ARR-shaped review with independent contribution-level dimensions",
   "type": "object",
   "required": [
     "response_type",
@@ -14,7 +14,7 @@
       "const": "unified"
     },
     "rubric_version": {
-      "const": "0.9.9"
+      "const": "0.10.0"
     },
     "input_mode": {
       "enum": [
@@ -156,7 +156,7 @@
         5,
         null
       ],
-      "description": "Only when requested: ARR-style contribution-only adaptation, not official overall recommendation or a conversion from historical1–10 scores."
+      "description": "ARR-style contribution Overall aligned to a single reviewer scale, never paper average/meta or a mean of dimension scores. High grades require concrete positive value. Not an official whole-paper recommendation."
     },
     "comparison_notes": {
       "type": [
@@ -504,9 +504,133 @@
         }
       },
       "description": "Optional presentation record; required issues still appear in top_issues. Do not invent issues to fill this array."
+    },
+    "arr_dimensions": {
+      "type": "object",
+      "description": "Full-review diagnostics. Numerical scores only when requested or ARR-style reviewing requested. Overall stays in top-level overall_score/overall_rationale, not an average of these fields.",
+      "properties": {
+        "soundness": {
+          "type": "object",
+          "required": [
+            "judgement",
+            "basis",
+            "scope"
+          ],
+          "properties": {
+            "score": {
+              "enum": [
+                1,
+                1.5,
+                2,
+                2.5,
+                3,
+                3.5,
+                4,
+                4.5,
+                5,
+                null
+              ]
+            },
+            "judgement": {
+              "type": "string",
+              "minLength": 1
+            },
+            "basis": {
+              "type": "string",
+              "minLength": 1
+            },
+            "scope": {
+              "const": "contribution_argument_support"
+            },
+            "unassessed_aspects": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "excitement": {
+          "type": "object",
+          "required": [
+            "judgement",
+            "basis",
+            "scope"
+          ],
+          "properties": {
+            "score": {
+              "enum": [
+                1,
+                1.5,
+                2,
+                2.5,
+                3,
+                3.5,
+                4,
+                4.5,
+                5,
+                null
+              ]
+            },
+            "judgement": {
+              "type": "string",
+              "minLength": 1
+            },
+            "basis": {
+              "type": "string",
+              "minLength": 1
+            },
+            "scope": {
+              "const": "contribution_interest_and_value"
+            },
+            "unassessed_aspects": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "confidence": {
+          "type": "object",
+          "required": [
+            "judgement",
+            "basis",
+            "scope"
+          ],
+          "properties": {
+            "score": {
+              "enum": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ]
+            },
+            "judgement": {
+              "type": "string",
+              "minLength": 1
+            },
+            "basis": {
+              "type": "string",
+              "minLength": 1
+            },
+            "scope": {
+              "const": "confidence_in_this_contribution_assessment"
+            },
+            "unassessed_aspects": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
     }
   },
-  "description": "Use full_review for a complete requested review, focused for a local question. Numerical fields remain optional and only appear when scoring is requested. User-specified exact formats take priority.",
+  "description": "Use full_review for a complete requested review, focused for a local question. Full reviews include independent contribution-level ARR diagnostics. Numerical fields appear only for scoring or ARR-style requests, respecting explicit no-score or single-score instructions. User-specified exact formats take priority.",
   "allOf": [
     {
       "if": {
@@ -521,8 +645,18 @@
           "idea",
           "claims",
           "overall_rationale",
-          "top_issues"
-        ]
+          "top_issues",
+          "arr_dimensions"
+        ],
+        "properties": {
+          "arr_dimensions": {
+            "required": [
+              "soundness",
+              "excitement",
+              "confidence"
+            ]
+          }
+        }
       }
     },
     {

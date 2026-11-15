@@ -4,7 +4,7 @@
 
 [English](README.md) · 简体中文
 
-[![技能版本 0.9.9](https://img.shields.io/badge/skill-0.9.9-0f766e?style=flat-square)](SKILL.md)
+[![技能版本 0.10.0](https://img.shields.io/badge/skill-0.10.0-0f766e?style=flat-square)](SKILL.md)
 [![按需 ARR 式 1–5 量尺](https://img.shields.io/badge/ARR--style-1%E2%80%935-475569?style=flat-square)](references/scoring.md)
 [![Markdown 与按需 JSON](https://img.shields.io/badge/output-Markdown%20%2B%20JSON-475569?style=flat-square)](references/output-format.md)
 
@@ -79,11 +79,14 @@ Codex 会自动发现这些位置的本地技能；未显示时可重启 Codex�
 
 ![评审流程：理解承诺，检查连接与影响，寻找可比论文，给出具体改法](docs/assets/workflow.png)
 
-默认输出可读的 Markdown：
+默认输出采用 ARR 式结构的可读 Markdown：
 
-1. **简短总览**：idea、总体判断，以及值得保留的具体价值。
-2. **逐项意见**：原文定位与短摘录 → 问题或优点 → 可比论文段落 → 修改动作。
-3. **样本索引**：统一使用 `S1`、`S2` 等编号，列出原文位置与链接。
+1. **Summary 摘要**：idea 与总体判断。
+2. **Strengths 优点**：具体值得保留的价值。
+3. **Weaknesses 不足**：必须修改的问题；没有就明确说明。
+4. **Suggestions 建议**：可选优化，原文、对照论文与动作就近放齐。
+5. **ARR 维度评价**：分别判断论证支持度、兴趣与价值、Overall 和本次把握。
+6. **样本索引**：统一 `S1`、`S2` 编号，列出原文位置与链接。
 
 通常重点展开最重要的 1–2 项；没有必改项就明确说明，可选润色保持为可选。
 
@@ -102,11 +105,20 @@ Codex 会自动发现这些位置的本地技能；未显示时可重启 Codex�
 
 来源就近放在对应意见旁。录用、奖项和公开审稿分数只作背景，不证明某个句子导致录用，也不决定另一篇稿件应得的分数。搜索使用公开主题词，不提交完整未公开段落。联网不可用或用户明确禁止时，会说明限制并继续评审。详见[检索、选例与引用规则](references/online-exemplars.md)。
 
-## 按需 ARR 式评分
+## ARR 式分项诊断与按需评分
 
-仅在明确要求评分时给数字，使用 **1–5、半分档位**，评估所给贡献及必要上下文，并解释所选档位及最接近的另一档。
+完整评审分别回答四个问题。普通评审给文字诊断；明确要求打分或 ARR 式评审时给数字。只要一种分数或明确不要数字的要求优先。
 
-这是本技能制定的**局部适配**，不代表 ARR 官方评分细则或背书。ARR 的[官方总体建议](https://aclrollingreview.org/reviewform#overall-assessment)面向整篇论文，本技能评分只针对贡献表达。它不预测录用或获奖，不核验完整研究，不平均辅助维度，也不换算历史 1–10 分。具体定义见[评分说明](references/scoring.md)。
+| 维度 | 评价什么 | 请求评分时的量尺 |
+| --- | --- | --- |
+| **Soundness 局部适配** | 所给材料中贡献论证与范围是否得到支持 | 1–5，半分档位 |
+| **Excitement** | 对具体读者的兴趣与潜在价值 | 1–5，半分档位 |
+| **Overall 局部适配** | 独立权衡贡献价值和实质保留 | 1–5，半分档位 |
+| **Reviewer Confidence** | 对本次局部判断的把握，不是论文质量 | 1–5，仅整数 |
+
+论证充分但增量普通的稿件，可以 Soundness 为 4、Overall 为 3。Overall 不取其他维度的平均；高于 3 要说明具体越档价值，无必改项不自动得到 4。不设目标均值或高分配额。
+
+这是**贡献部分的局部适配**，不代表 ARR 官方全文审稿或背书。未检查的实验与复现记为未评，不记作失败。目标是单审稿人式判断，不是论文均分、meta-review、录用预测或历史 1–10 分换算。对齐 rubric 结构不意味着已经校准到真实 ARR 分数分布。详见[维度说明](references/arr-dimensions.md)、[Overall 锚点](references/scoring.md)及 [ARR 官方表单](https://aclrollingreview.org/reviewform)。
 
 ## 目录结构
 
@@ -117,7 +129,8 @@ contribution-review-skill/
 ├── references/
 │   ├── output-format.md             # 可读评语结构
 │   ├── online-exemplars.md          # 检索与引用规则
-│   ├── scoring.md                   # 按需 ARR 式适配
+│   ├── arr-dimensions.md            # 独立的贡献部分 Rubric
+│   ├── scoring.md                   # 按需 Overall 适配
 │   ├── review-schema.json           # 可选结构化输出
 │   ├── exemplar-catalog.md          # 检索起点，不作评分锚点
 │   ├── exemplar-evidence.json       # 公开来源记录
